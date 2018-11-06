@@ -4,7 +4,7 @@ import { Store, Select } from '@ngxs/store';
 import { StickersService } from './stickers.service';
 import { Sticker } from './sticker.model';
 import { CartService } from '../cart/cart.service';
-import { FetchStickers, StickersState } from './store';
+import { FetchStickers, StickersState, StickersStateModel } from './store';
 import { AddSticker } from '../common';
 
 @Component({
@@ -21,6 +21,9 @@ export class StickersComponent {
   }
 
   buy(sticker: Sticker) {
+    const currentStickers: Sticker[] = this.store.selectSnapshot((state: { stickers: StickersStateModel }) => state.stickers.stickers);
+    console.log('snapshot: ', currentStickers);
+
     this.store.dispatch(new AddSticker(sticker));
   }
 }

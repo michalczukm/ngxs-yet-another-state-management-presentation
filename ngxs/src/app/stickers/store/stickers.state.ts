@@ -23,7 +23,6 @@ export class StickersState {
     return this.stickersService.getAll()
       .pipe(
         tap(stickers => {
-          console.log('===foo', stickers);
           dispatch(new LoadStickers(stickers));
         })
       );
