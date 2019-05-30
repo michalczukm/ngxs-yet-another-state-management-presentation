@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 import { StickersService } from './stickers.service';
@@ -10,7 +9,6 @@ import { StickerEffects } from './effects/stickers.effects';
   declarations: [StickersComponent],
   imports: [
     CommonModule,
-    HttpModule,
     EffectsModule.forFeature([StickerEffects])
   ],
   exports: [StickersComponent],
