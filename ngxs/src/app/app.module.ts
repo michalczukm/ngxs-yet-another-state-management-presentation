@@ -27,7 +27,8 @@ import { TshirtsModule } from './tshirts';
     AppRoutingModule,
     NgxsModule.forRoot([CartState]),
     NgxsReduxDevtoolsPluginModule.forRoot({
-      disabled: environment.production
+      disabled: environment.production,
+      maxAge: 25
     })
   ],
   bootstrap: [AppComponent]
