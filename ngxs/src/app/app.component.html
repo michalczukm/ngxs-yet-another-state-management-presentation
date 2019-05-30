@@ -27,10 +27,15 @@
     </div>
   </div>
 
+  <div>
+    <button class="btn btn-primary" (click)="getFreshSnapshot()" type="button">Get fresh cart "snapshot"</button>
+    <pre>{{ currentCartState | json }}</pre>
+  </div>
+
   <router-outlet></router-outlet>
 
   <footer class="footer">
-    <p>© <a href="https://michalczukm.xyz">michalczukm.xyz</a> 2018</p>
+    <p>© <a href="https://michalczukm.xyz">michalczukm.xyz</a> 2019</p>
   </footer>
 
 </div>
