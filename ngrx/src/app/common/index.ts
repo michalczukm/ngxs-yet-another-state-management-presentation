@@ -4,10 +4,10 @@ import {
 } from '@ngrx/store';
 import { stickers, StickersStore } from './stickers.reducer';
 
-export interface RootStore {
+export type RootStore = {
   cart: CartStore;
   stickers: StickersStore;
-}
+};
 
 export const reducers: ActionReducerMap<RootStore> = {
   cart,

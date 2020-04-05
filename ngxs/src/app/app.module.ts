@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxsModule } from '@ngxs/store'
+import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 import { environment } from '../environments/environment';
@@ -14,9 +14,7 @@ import { CartState } from './common';
 import { TshirtsModule } from './tshirts';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -25,13 +23,14 @@ import { TshirtsModule } from './tshirts';
     StickersModule,
     TshirtsModule,
     AppRoutingModule,
-    NgxsModule.forRoot([CartState], { developmentMode: !environment.production }),
+    NgxsModule.forRoot([CartState], {
+      developmentMode: !environment.production,
+    }),
     NgxsReduxDevtoolsPluginModule.forRoot({
       disabled: environment.production,
-      maxAge: 25
-    })
+      maxAge: 25,
+    }),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

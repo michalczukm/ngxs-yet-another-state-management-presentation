@@ -3,20 +3,19 @@ import { Observable } from 'rxjs';
 import { Sticker } from '../stickers';
 import { Tshirt } from '../tshirts/tshirt.model';
 import { Store } from '@ngxs/store';
-import { CartState, RemoveSticker, RemoveTshirt } from '../common';
+import { RemoveSticker, RemoveTshirt } from '../common';
 
 export type Cart = {
-  stickers: Sticker[],
-  tshirts: Tshirt[]
+  stickers: Sticker[];
+  tshirts: Tshirt[];
 };
 
 @Injectable()
 export class CartService {
-
-  constructor(private store: Store) { }
+  constructor(private store: Store) {}
 
   get(): Observable<Cart> {
-    return this.store.select(store => store.cart);
+    return this.store.select((store) => store.cart);
   }
 
   removeSticker(sticker: Sticker) {

@@ -8,28 +8,28 @@ const initialState =
     tshirts: [] as Tshirt[],
   } as CartStore;
 
-export interface CartStore {
+export type CartStore = {
   stickers: Sticker[];
   tshirts: Tshirt[];
-}
+};
 
 export class StickerAddAction implements Action {
-  type = 'STICKER_ADD';
+  type: string = 'STICKER_ADD';
   constructor(public payload: Sticker) {}
 }
 
 export class StickerRemoveAction implements Action {
-  type = 'STICKER_REMOVE';
+  type: string = 'STICKER_REMOVE';
   constructor(public payload: Sticker) {}
 }
 
 export class TshirtAddAction implements Action {
-  type = 'TSHIRT_ADD';
+  type: string = 'TSHIRT_ADD';
   constructor(public payload: Tshirt) {}
 }
 
 export class TshirtRemoveAction implements Action {
-  type = 'TSHIRT_REMOVE';
+  type: string = 'TSHIRT_REMOVE';
   constructor(public payload: Tshirt) {}
 }
 

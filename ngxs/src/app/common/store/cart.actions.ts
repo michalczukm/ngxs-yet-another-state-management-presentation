@@ -7,7 +7,7 @@ export class AddSticker {
 }
 
 export class RemoveSticker {
-  static readonly type = '[cart] remove sticker'
+  static readonly type = '[cart] remove sticker';
   constructor(public payload: Sticker) {}
 }
 
@@ -21,6 +21,4 @@ export class RemoveTshirt {
   constructor(public payload: Tshirt) {}
 }
 
-
-type CartActions = AddSticker | RemoveSticker |
-                   AddTshirt | RemoveTshirt;
+type CartActions = AddSticker | RemoveSticker | AddTshirt | RemoveTshirt;

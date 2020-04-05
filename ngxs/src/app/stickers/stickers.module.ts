@@ -6,11 +6,7 @@ import { StickersState } from './store';
 
 @NgModule({
   declarations: [StickersComponent],
-  imports: [
-    CommonModule,
-    NgxsModule.forFeature([StickersState])
-  ],
-  exports: [StickersComponent]
+  imports: [CommonModule, NgxsModule.forFeature([StickersState])],
+  exports: [StickersComponent],
 })
-export class StickersModule {
-}
+export class StickersModule {}

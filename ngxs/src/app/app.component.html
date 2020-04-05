@@ -3,13 +3,29 @@
     <nav>
       <ul class="nav nav-pills float-right">
         <li class="nav-item">
-          <a [routerLink]="'stickers'" [routerLinkActive]="'active'" class="nav-link">Stickers</a>
+          <a
+            [routerLink]="'stickers'"
+            [routerLinkActive]="'active'"
+            class="nav-link"
+            >Stickers</a
+          >
         </li>
         <li class="nav-item">
-          <a [routerLink]="'tshirts'" [routerLinkActive]="'active'" class="nav-link">Tshirts</a>
+          <a
+            [routerLink]="'tshirts'"
+            [routerLinkActive]="'active'"
+            class="nav-link"
+            >Tshirts</a
+          >
         </li>
         <li class="nav-item">
-          <a data-toggle="collapse" class="nav-link" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <a
+            data-toggle="collapse"
+            class="nav-link"
+            href="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
             <i class="fa fa-shopping-cart"></i>
             <span class="badge badge-info"> {{ cartItemsNumber }}</span>
           </a>
@@ -28,7 +44,9 @@
   </div>
 
   <div>
-    <button class="btn btn-primary" (click)="getFreshSnapshot()" type="button">Get fresh cart "snapshot"</button>
+    <button class="btn btn-primary" (click)="getFreshSnapshot()" type="button">
+      Get fresh cart "snapshot"
+    </button>
     <pre>{{ currentCartState | json }}</pre>
   </div>
 
@@ -37,5 +55,4 @@
   <footer class="footer">
     <p>© <a href="https://michalczukm.xyz">michalczukm.xyz</a> 2019</p>
   </footer>
-
 </div>

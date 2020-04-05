@@ -4,10 +4,10 @@ import { Observable } from 'rxjs';
 import { Sticker } from './sticker.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StickersService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public getAll(): Observable<Sticker[]> {
     return this.http.get<Sticker[]>('http://localhost:3000/stickers');

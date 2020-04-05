@@ -37,8 +37,12 @@
     "@ngxs/devtools-plugin": "^3.6.2",
     "@types/node": "^12.12.34",
     "codelyzer": "^5.1.2",
+    "husky": "^4.2.3",
+    "prettier": "^2.0.3",
+    "pretty-quick": "^2.0.1",
     "ts-node": "~8.2.0",
-    "tslint": "~5.16.0",
+    "tslint": "^6.1.1",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.5.3"
   }
 }

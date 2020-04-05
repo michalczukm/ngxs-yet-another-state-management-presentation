@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Store } from '@ngxs/store';
-import {CartState, CartStateModel} from './common';
+import { CartState, CartStateModel } from './common';
 
 @Component({
   selector: 'smt-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit, OnDestroy {
   cartItemsNumber = 0;
@@ -14,18 +14,18 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private subscriptions = [] as Subscription[];
 
-  constructor(private store: Store) {
-  }
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.subscriptions.push(
-      this.store.select(CartState.itemsNumber)
-        .subscribe(length => this.cartItemsNumber = length)
+      this.store
+        .select(CartState.itemsNumber)
+        .subscribe((length) => (this.cartItemsNumber = length))
     );
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach(sub => sub.unsubscribe());
+    this.subscriptions.forEach((sub) => sub.unsubscribe());
   }
 
   getFreshSnapshot() {

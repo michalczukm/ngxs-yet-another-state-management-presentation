@@ -5,20 +5,22 @@ import { TshirtsComponent } from './tshirts/tshirts.component';
 
 const routes: Routes = [
   {
-    path: '', pathMatch: 'full', redirectTo: 'stickers'
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'stickers',
   },
   {
     path: 'stickers',
-    component: StickersComponent
+    component: StickersComponent,
   },
   {
     path: 'tshirts',
-    component: TshirtsComponent
-  }
+    component: TshirtsComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

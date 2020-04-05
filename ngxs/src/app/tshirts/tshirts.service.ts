@@ -5,8 +5,7 @@ import { Tshirt } from './tshirt.model';
 
 @Injectable()
 export class TshirtsService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public GetAll(): Observable<Tshirt[]> {
     return this.http.get<Tshirt[]>('http://localhost:3000/tshirts');
