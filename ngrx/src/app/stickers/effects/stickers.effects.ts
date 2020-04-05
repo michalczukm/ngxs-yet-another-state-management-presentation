@@ -10,16 +10,18 @@ import { StickersFetchedAction } from '../../common';
 @Injectable()
 export class StickerEffects {
   @Effect()
-  get$: Observable<Action> = this.actions$.pipe(ofType('STICKERS_FETCH_STICKERS'))
+  get$: Observable<Action> = this.actions$
+    .pipe(ofType('STICKERS_FETCH_STICKERS'))
     .pipe(
       flatMap(() => {
-        return this.stickersService.getAll()
-          .pipe(
-            map((result: Sticker[]) => new StickersFetchedAction(result))
-          )
+        return this.stickersService
+          .getAll()
+          .pipe(map((result: Sticker[]) => new StickersFetchedAction(result)));
       })
     );
 
-  constructor(private actions$: Actions, private stickersService: StickersService) {
-  }
+  constructor(
+    private actions$: Actions,
+    private stickersService: StickersService
+  ) {}
 }

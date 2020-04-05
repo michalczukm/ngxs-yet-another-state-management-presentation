@@ -9,5 +9,4 @@ import { TshirtsComponent } from './tshirts.component';
   exports: [TshirtsComponent],
   providers: [TshirtsService],
 })
-export class TshirtsModule {
-}
+export class TshirtsModule {}

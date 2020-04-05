@@ -9,4 +9,4 @@ import { CartComponent } from './cart.component';
   exports: [CartComponent],
   providers: [CartService],
 })
-export class CartModule { }
+export class CartModule {}

@@ -9,19 +9,21 @@ import { Tshirt } from './tshirt.model';
 @Component({
   selector: 'smt-tshirts',
   templateUrl: './tshirts.component.html',
-  styleUrls: ['./tshirts.component.css']
+  styleUrls: ['./tshirts.component.css'],
 })
 export class TshirtsComponent implements OnInit {
   tshirts$: Observable<Tshirt[]>;
 
-  constructor(private tshirtsService: TshirtsService,
-              private store: Store<RootStore>) { }
+  constructor(
+    private tshirtsService: TshirtsService,
+    private store: Store<RootStore>
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.tshirts$ = this.tshirtsService.GetAll();
   }
 
-  buy(tshirt: Tshirt) {
+  buy(tshirt: Tshirt): void {
     this.store.dispatch(new TshirtAddAction(tshirt));
   }
 }

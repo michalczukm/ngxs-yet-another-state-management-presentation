@@ -1,11 +1,12 @@
-import { Action, combineReducers } from '@ngrx/store';
+import { Action} from '@ngrx/store';
 import { Sticker } from '../stickers/sticker.model';
 import { Tshirt } from '../tshirts/tshirt.model';
 
-const initialState = {
-  stickers: [] as Sticker[],
-  tshirts: [] as Tshirt[]
-} as CartStore;
+const initialState =
+  {
+    stickers: [] as Sticker[],
+    tshirts: [] as Tshirt[],
+  } as CartStore;
 
 export interface CartStore {
   stickers: Sticker[];
@@ -32,31 +33,33 @@ export class TshirtRemoveAction implements Action {
   constructor(public payload: Tshirt) {}
 }
 
-
-type CartActions = StickerAddAction | StickerRemoveAction |
-                   TshirtAddAction | TshirtRemoveAction;
+type CartActions =
+  | StickerAddAction
+  | StickerRemoveAction
+  | TshirtAddAction
+  | TshirtRemoveAction;
 
 export const cart = (state = initialState, action: CartActions): CartStore => {
   switch (action.type as string) {
     case 'STICKER_ADD':
       return {
         ...state,
-        stickers: [...state.stickers, Object.assign({}, action.payload)]
+        stickers: [...state.stickers, Object.assign({}, action.payload)],
       };
     case 'STICKER_REMOVE':
       return {
         ...state,
-        stickers: state.stickers.filter(s => s !== action.payload)
+        stickers: state.stickers.filter((s) => s !== action.payload),
       };
     case 'TSHIRT_ADD':
       return {
         ...state,
-        tshirts: [...state.tshirts, Object.assign({}, action.payload)]
+        tshirts: [...state.tshirts, Object.assign({}, action.payload)],
       };
     case 'TSHIRT_REMOVE':
       return {
         ...state,
-        tshirts: state.tshirts.filter(s => s !== action.payload)
+        tshirts: state.tshirts.filter((s) => s !== action.payload),
       };
     default:
       return state;

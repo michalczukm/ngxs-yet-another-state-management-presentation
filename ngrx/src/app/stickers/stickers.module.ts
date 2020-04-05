@@ -7,12 +7,8 @@ import { StickerEffects } from './effects/stickers.effects';
 
 @NgModule({
   declarations: [StickersComponent],
-  imports: [
-    CommonModule,
-    EffectsModule.forFeature([StickerEffects])
-  ],
+  imports: [CommonModule, EffectsModule.forFeature([StickerEffects])],
   exports: [StickersComponent],
   providers: [StickersService],
 })
-export class StickersModule {
-}
+export class StickersModule {}
