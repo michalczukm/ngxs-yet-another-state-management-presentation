@@ -4,6 +4,7 @@ import { tap } from 'rxjs/operators';
 import { State, StateContext, Action } from '@ngxs/store';
 import { FetchStickers, LoadStickers } from './stickers.actions';
 import { StickersService } from '../stickers.service';
+import { Injectable } from '@angular/core';
 
 export interface StickersStateModel {
   stickers: Sticker[];
@@ -15,6 +16,7 @@ export interface StickersStateModel {
     stickers: []
   }
 })
+@Injectable()
 export class StickersState {
   constructor(private stickersService: StickersService) { }
 

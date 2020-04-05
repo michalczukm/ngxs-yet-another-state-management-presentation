@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxsModule } from '@ngxs/store';
-import { StickersService } from './stickers.service';
 import { StickersComponent } from './stickers.component';
 import { StickersState } from './store';
 
@@ -11,8 +10,7 @@ import { StickersState } from './store';
     CommonModule,
     NgxsModule.forFeature([StickersState])
   ],
-  exports: [StickersComponent],
-  providers: [StickersService],
+  exports: [StickersComponent]
 })
 export class StickersModule {
 }

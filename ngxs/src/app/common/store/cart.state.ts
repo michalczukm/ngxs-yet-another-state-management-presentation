@@ -2,6 +2,7 @@ import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { Sticker } from '../../stickers';
 import { Tshirt } from '../../tshirts';
 import { AddSticker, RemoveSticker, AddTshirt, RemoveTshirt } from './cart.actions';
+import { Injectable } from '@angular/core';
 
 export interface CartStateModel {
   stickers: Sticker[];
@@ -15,6 +16,7 @@ export interface CartStateModel {
     tshirts: [] as Tshirt[]
   }
 })
+@Injectable()
 export class CartState {
 
   @Selector()

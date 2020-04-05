@@ -25,7 +25,7 @@ import { TshirtsModule } from './tshirts';
     StickersModule,
     TshirtsModule,
     AppRoutingModule,
-    NgxsModule.forRoot([CartState]),
+    NgxsModule.forRoot([CartState], { developmentMode: !environment.production }),
     NgxsReduxDevtoolsPluginModule.forRoot({
       disabled: environment.production,
       maxAge: 25

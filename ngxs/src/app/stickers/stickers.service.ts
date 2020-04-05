@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Sticker } from './sticker.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class StickersService {
   constructor(private http: HttpClient) { }
 
