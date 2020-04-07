@@ -2,14 +2,17 @@
 
 This repository contains code samples for my presentation called "NGXS - yet another Angular state management library", about ... [NGXS](https://ngxs.gitbook.io/ngxs/) :smirk:
 
-You can find presentation under [-](-)
-
 ## Content :rocket:
-For comparison between [NGXS](https://ngxs.gitbook.io/ngxs/) and popular [ngrx](http://ngrx.github.io/) I created two projects in this repository. Both of them have their README.md files linked above:
+
+For comparison between [NGXS](https://ngxs.gitbook.io/ngxs/), popular [ngrx](http://ngrx.github.io/) and [Akita])(https://netbasal.gitbook.io/akita/) I created three projects in this repository. All of them have their README.md files linked above:
+
 * [ngxs example](ngxs/README.md) :speedboat:
 * [ngrx example](ngrx/README.md) :helicopter:
+* [akita example](akita/README.md) 🐶
+
 
 ## Mock API
+
 To run **any** of the applications run server
 Run `npm install` then `npm start` in [~/server](../server) to run `json-server` instance.
 
