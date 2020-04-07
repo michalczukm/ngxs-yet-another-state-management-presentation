@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Sticker } from './sticker.model';
 import { StickersService } from './stickers.service';
-import { CartService } from '../cart/cart.service';
+import { CartService } from '../common/state';
 
 @Component({
   selector: 'smt-stickers',
@@ -18,6 +18,6 @@ export class StickersComponent {
   ) {}
 
   buy(sticker: Sticker): void {
-    this.cartService.addSticket(sticker);
+    this.cartService.addSticker(sticker);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { CartService } from './cart/cart.service';
+import { CartService } from './common/state';
 
 @Component({
   selector: 'smt-root',
@@ -16,9 +16,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscriptions.push(
-      this.cartService
-        .itemsNumber$()
-        .subscribe((length) => (this.cartItemsNumber = length))
+      this.cartService.query.itemsNumber$.subscribe(
+        (length) => (this.cartItemsNumber = length)
+      )
     );
   }
 

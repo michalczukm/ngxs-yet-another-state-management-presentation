@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Sticker } from '../stickers';
-import { CartService } from './cart.service';
 import { Tshirt } from '../tshirts';
+import { CartService } from '../common/state';
 
 @Component({
   selector: 'smt-cart',
@@ -29,13 +29,13 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    const cart$ = this.cartService.get();
+    const cart$ = this.cartService.query.cart$;
 
     this.stickers$ = cart$.pipe(map((cart) => cart.stickers));
     this.tshirts$ = cart$.pipe(map((cart) => cart.tshirts));
-    this.isCartEmpty$ = this.cartService
-      .itemsNumber$()
-      .pipe(map((value) => value <= 0));
+    this.isCartEmpty$ = this.cartService.query.itemsNumber$.pipe(
+      map((value) => value <= 0)
+    );
   }
 
   removeSticker(sticker: Sticker): void {

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TshirtsService } from './tshirts.service';
 import { Tshirt } from './tshirt.model';
-import { CartService } from '../cart/cart.service';
+import { CartService } from '../common/state';
 
 @Component({
   selector: 'smt-tshirts',
