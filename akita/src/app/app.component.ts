@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CartService } from './common/state';
+import { Cart } from './cart/cart.service';
 
 @Component({
   selector: 'smt-root',
@@ -9,6 +10,8 @@ import { CartService } from './common/state';
 })
 export class AppComponent implements OnInit, OnDestroy {
   cartItemsNumber: number = 0;
+
+  currentCartState: Cart;
 
   private subscriptions: Subscription[] = [];
 
@@ -24,5 +27,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptions.forEach((sub) => sub.unsubscribe());
+  }
+
+  getFreshSnapshot(): void {
+    this.currentCartState = this.cartService.query.getValue();
   }
 }

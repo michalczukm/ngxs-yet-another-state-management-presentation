@@ -43,6 +43,13 @@
     </div>
   </div>
 
+  <div>
+    <button class="btn btn-primary" (click)="getFreshSnapshot()" type="button">
+      Get fresh cart "snapshot"
+    </button>
+    <pre>{{ currentCartState | json }}</pre>
+  </div>
+
   <router-outlet></router-outlet>
 
   <footer class="footer">
