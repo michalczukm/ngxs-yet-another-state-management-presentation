@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TshirtsService } from './tshirts.service';
 import { Tshirt } from './tshirt.model';
 import { CartService } from '../common/state';
+import { TshirtsService } from './state';
 
 @Component({
   selector: 'smt-tshirts',
@@ -18,7 +18,7 @@ export class TshirtsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.tshirts$ = this.tshirtsService.GetAll();
+    this.tshirts$ = this.tshirtsService.get();
   }
 
   buy(tshirt: Tshirt): void {

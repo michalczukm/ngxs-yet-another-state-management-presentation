@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { StickersModule } from './stickers';
 import { CartModule } from './cart';
 import { TshirtsModule } from './tshirts';
+import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,15 @@ import { TshirtsModule } from './tshirts';
     CartModule,
     StickersModule,
     TshirtsModule,
-    AppRoutingModule
+    AppRoutingModule,
+  ],
+  providers: [
+    {
+      provide: NG_ENTITY_SERVICE_CONFIG,
+      useValue: {
+        baseUrl: 'http://localhost:3000',
+      },
+    },
   ],
   bootstrap: [AppComponent],
 })
