@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Sticker } from './sticker.model';
-import { StickersService } from './stickers.service';
 import { CartService } from '../common/state';
+import { StickersService } from './state';
 
 @Component({
   selector: 'smt-stickers',
@@ -10,7 +10,7 @@ import { CartService } from '../common/state';
   styleUrls: ['./stickers.component.css'],
 })
 export class StickersComponent {
-  stickers$: Observable<Sticker[]> = this.stickersService.getAll();
+  stickers$: Observable<Sticker[]> = this.stickersService.get();
 
   constructor(
     private stickersService: StickersService,
