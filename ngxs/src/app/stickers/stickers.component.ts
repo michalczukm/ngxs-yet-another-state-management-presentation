@@ -18,7 +18,7 @@ export class StickersComponent {
     this.store.dispatch(new FetchStickers());
   }
 
-  buy(sticker: Sticker) {
+  buy(sticker: Sticker): void {
     const currentStickers: Sticker[] = this.store.selectSnapshot(
       (state: { stickers: StickersStateModel }) => state.stickers.stickers
     );

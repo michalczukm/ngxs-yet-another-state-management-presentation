@@ -30,18 +30,18 @@ export class CartComponent implements OnInit {
 
   constructor(private cartService: CartService, private store: Store) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     const cart$ = this.cartService.get();
 
     this.stickers$ = cart$.pipe(map((cart) => cart.stickers));
     this.tshirts$ = cart$.pipe(map((cart) => cart.tshirts));
   }
 
-  removeSticker(sticker: Sticker) {
+  removeSticker(sticker: Sticker): void {
     this.cartService.removeSticker(sticker);
   }
 
-  removeTshirt(tshirt: Tshirt) {
+  removeTshirt(tshirt: Tshirt): void {
     this.cartService.removeTshirt(tshirt);
   }
 }

@@ -28,7 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach((sub) => sub.unsubscribe());
   }
 
-  getFreshSnapshot() {
+  getFreshSnapshot(): void {
     this.currentCartState = this.store.selectSnapshot(CartState);
   }
 }

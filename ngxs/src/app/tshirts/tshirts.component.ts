@@ -15,11 +15,11 @@ export class TshirtsComponent implements OnInit {
 
   constructor(private tshirtsService: TshirtsService, private store: Store) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.tshirts$ = this.tshirtsService.GetAll();
   }
 
-  buy(tshirt: Tshirt) {
+  buy(tshirt: Tshirt): void {
     this.store.dispatch(new AddTshirt(tshirt));
   }
 }

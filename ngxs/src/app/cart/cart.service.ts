@@ -18,11 +18,11 @@ export class CartService {
     return this.store.select((store) => store.cart);
   }
 
-  removeSticker(sticker: Sticker) {
+  removeSticker(sticker: Sticker): void {
     this.store.dispatch(new RemoveSticker(sticker));
   }
 
-  removeTshirt(tshirt: Tshirt) {
+  removeTshirt(tshirt: Tshirt): void {
     this.store.dispatch(new RemoveTshirt(tshirt));
   }
 }
