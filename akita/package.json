@@ -38,6 +38,7 @@
     "@angular-devkit/build-angular": "~0.901.0",
     "@angular/cli": "^9.1.0",
     "@angular/compiler-cli": "^9.1.0",
+    "@datorama/akita-ngdevtools": "^4.0.0",
     "@types/node": "^12.12.34",
     "codelyzer": "^5.1.2",
     "husky": "^4.2.3",

@@ -8,6 +8,7 @@ import { StickersModule } from './stickers';
 import { CartModule } from './cart';
 import { TshirtsModule } from './tshirts';
 import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,9 @@ import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
     StickersModule,
     TshirtsModule,
     AppRoutingModule,
+    AkitaNgDevtools,
+    // 👇 for some reason dont work - no dev tools in dev mode
+    // environment.production ? [] : AkitaNgDevtools,
   ],
   providers: [
     {
