@@ -1,12 +1,11 @@
-import { Action} from '@ngrx/store';
-import { Sticker } from '../stickers/sticker.model';
-import { Tshirt } from '../tshirts/tshirt.model';
+import { Action, createAction, createReducer, on, props } from '@ngrx/store';
+import { Sticker } from '../stickers';
+import { Tshirt } from '../tshirts';
 
-const initialState =
-  {
-    stickers: [] as Sticker[],
-    tshirts: [] as Tshirt[],
-  } as CartStore;
+const initialState: CartStore = {
+  stickers: [],
+  tshirts: [],
+};
 
 export type CartStore = {
   stickers: Sticker[];
@@ -22,6 +21,11 @@ export class StickerRemoveAction implements Action {
   type: string = 'STICKER_REMOVE';
   constructor(public payload: Sticker) {}
 }
+
+// export const StickerRemoveAction = createAction(
+//   'STICKER_REMOVE',
+//   props<{ payload: Sticker }>()
+// );
 
 export class TshirtAddAction implements Action {
   type: string = 'TSHIRT_ADD';
