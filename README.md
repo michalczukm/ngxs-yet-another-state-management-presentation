@@ -4,7 +4,7 @@ This repository contains code samples for my presentation called "NGXS - yet ano
 
 ## Content :rocket:
 
-For comparison between [NGXS](https://ngxs.gitbook.io/ngxs/), popular [ngrx](http://ngrx.github.io/) and [Akita])(https://netbasal.gitbook.io/akita/) I created three projects in this repository. All of them have their README.md files linked above:
+For comparison between [NGXS](https://ngxs.gitbook.io/ngxs/), popular [ngrx](http://ngrx.github.io/) and [Akita](https://netbasal.gitbook.io/akita/) I created three projects in this repository. All of them have their README.md files linked above:
 
 * [ngxs example](ngxs/README.md) :speedboat:
 * [ngrx example](ngrx/README.md) :helicopter:
