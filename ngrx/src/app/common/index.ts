@@ -1,6 +1,8 @@
 import { cart, CartStore } from './cart.reducer';
 import {
   ActionReducerMap,
+  createSelector,
+  createFeatureSelector,
 } from '@ngrx/store';
 import { stickers, StickersStore } from './stickers.reducer';
 
@@ -17,11 +19,18 @@ export const reducers: ActionReducerMap<RootStore> = {
 export * from './cart.reducer';
 export * from './stickers.reducer';
 
-// queries
-const itemsNumberQuery = (store: RootStore) =>
-  store.cart.stickers.length + store.cart.tshirts.length;
+// queries/selectors ==========
+const itemsNumberQuery = (cartStore: CartStore) =>
+  cartStore.stickers.length + cartStore.tshirts.length;
+
+export const selectCart = createFeatureSelector<CartStore>('cart');
 
 export const CartQueries = {
-  itemsNumber: itemsNumberQuery,
-  isCartEmpty: (store: RootStore) => itemsNumberQuery(store) <= 0,
+  itemsNumber: createSelector(selectCart, (state) => itemsNumberQuery(state)),
+  isCartEmpty: createSelector(
+    selectCart,
+    (state) => state.stickers.length + state.tshirts.length <= 0
+  ),
+  stickers: createSelector(selectCart, (state) => state.stickers),
+  tshirts: createSelector(selectCart, (state) => state.tshirts),
 };

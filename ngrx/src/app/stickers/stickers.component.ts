@@ -15,7 +15,8 @@ export class StickersComponent {
   stickers$: Observable<Sticker[]>;
 
   constructor(private store: Store<RootStore>) {
-    this.stickers$ = this.store.select((state) => state.stickers.stickers);
+    this.stickers$ = this.store.select(state => state.stickers.stickers);
+
     this.store.dispatch(new FetchStickersAction());
   }
 
